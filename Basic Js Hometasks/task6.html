@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Changing Color</title>
+</head>
+<style>
+    body {
+        background-color: #fff;
+    }
+
+    div button {
+        margin-top: 350px;
+        margin-left: 680px;
+    }
+
+    div h1 {
+        text-align: center;
+        position: absolute;
+        left: 640px;
+        top: 260px;
+    }
+</style>
+
+<body>
+    <div>
+        <!-- <h1 id="color">#fff</h1> -->
+        <button id="changer" class="btn btn-dark">Change Background Color</button>
+    </div>
+
+
+
+
+    <script>
+        let color = document.getElementById('color')
+        let changer = document.getElementById("changer");
+        changer.addEventListener('click', function () {
+            document.body.style.backgroundColor = `#${randomCombination(6)}`
+        })
+
+
+
+
+        let randomCombination = function (num) {
+            let symbols = [9, "b", 8, "d", 6, 7, "e", 4, "f", 0, 2, "a", "c", 1, 3, 5];
+            let randomColor = "";
+            for (let i = 0; i < num; i++) {
+                random = symbols[numGenerator(15)];
+                randomColor += random;
+            }
+
+            return randomColor;
+        }
+
+
+
+
+
+        let numGenerator = function (number) {
+
+            let num = Math.random() * number;
+            let rounded = Math.round(num);
+            return rounded;
+
+
+        }
+    </script>
+</body>
+
+</html>

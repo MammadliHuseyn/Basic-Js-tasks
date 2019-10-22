@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>JS DOM practice</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        $(document).ready(function () {
+            let elementCreator = function (tagname, classname, appendto) {
+                let element = document.createElement(tagname);
+                if (classname != null) {
+                    element.className = classname;
+                }
+                appendto.appendChild(element);
+
+                return element;
+            }
+
+            let container = elementCreator("div", "container mt-5", document.body);
+            let row = elementCreator("div", "row", container);
+            let col = elementCreator("div", "col-4", row);
+            let form = elementCreator("form", "", col);
+            let first_div = elementCreator("div", "form-group", form);
+            let first_label = elementCreator("label", "", first_div);
+            let first_input = elementCreator("input", "form-control",first_div);
+            first_label.innerText="Enter first number";
+            let second_div = elementCreator("div", "form-group", form);
+            let second_label = elementCreator("label", "", second_div);
+            let second_input = elementCreator("input", "form-control",second_div);
+            second_label.innerText="Enter second number";
+            let btn = elementCreator("button","btn btn-success",form);
+            btn.innerText= "button"
+        })
+
+    </script>
+</body>
+
+</html>
